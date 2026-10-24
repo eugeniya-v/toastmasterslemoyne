@@ -282,7 +282,7 @@ function PortesOuvertes() {
             </div>
             <div className="mt-6 grid gap-6 sm:grid-cols-2">
               <Figure src={presentation.url} alt="Un membre présente son discours devant un écran" caption="Partager ses idées avec clarté." className="aspect-[4/3]" />
-              <Figure src={membresEvenement.url} alt="Cinq membres réunis lors d'un événement" caption="Se retrouver et progresser ensemble." className="aspect-[4/3] [&_img]:object-top" />
+              <Figure src={membresEvenement.url} alt="Cinq membres réunis lors d'un événement" caption="Se retrouver et progresser ensemble." className="aspect-[3/4] sm:aspect-[4/3] [&_img]:object-bottom" />
             </div>
           </div>
         </section>
@@ -404,11 +404,11 @@ function PortesOuvertes() {
       {/* FOOTER */}
       <footer className="bg-navy-deep py-14 pb-28 sm:pb-14">
         <div className="mx-auto flex max-w-7xl flex-col gap-10 px-5 sm:px-8 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-5">
+            <div className="flex min-w-0 flex-col items-start gap-5 sm:flex-row sm:items-center">
             <img src={logo.url} alt="Logo officiel Toastmasters International" className="h-24 w-28 shrink-0 rounded bg-paper p-2 object-contain" loading="lazy" />
             <div>
               <p className="font-display text-lg font-bold">Club Toastmasters Lemoyne de Candiac</p>
-              <a href={`mailto:${EMAIL}`} className="mt-1 inline-flex items-center gap-2 text-muted-foreground hover:text-accent">
+              <a href={`mailto:${EMAIL}`} className="mt-1 inline-flex max-w-full items-center gap-2 break-all text-muted-foreground hover:text-accent">
                 <Mail className="h-4 w-4" aria-hidden />
                 {EMAIL}
               </a>
