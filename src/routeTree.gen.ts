@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PortesOuvertesRouteImport } from './routes/portes-ouvertes'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PortesOuvertesRoute = PortesOuvertesRouteImport.update({
+  id: '/portes-ouvertes',
+  path: '/portes-ouvertes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/portes-ouvertes': typeof PortesOuvertesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/portes-ouvertes': typeof PortesOuvertesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/portes-ouvertes': typeof PortesOuvertesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/portes-ouvertes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/portes-ouvertes'
+  id: '__root__' | '/' | '/portes-ouvertes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PortesOuvertesRoute: typeof PortesOuvertesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/portes-ouvertes': {
+      id: '/portes-ouvertes'
+      path: '/portes-ouvertes'
+      fullPath: '/portes-ouvertes'
+      preLoaderRoute: typeof PortesOuvertesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PortesOuvertesRoute: PortesOuvertesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
