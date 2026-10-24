@@ -202,7 +202,7 @@ function PortesOuvertes() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" aria-hidden />
               </div>
               <div className="glass relative -mt-28 mr-auto w-[92%] rounded-2xl p-6 shadow-card sm:p-7 lg:absolute lg:-left-16 lg:bottom-8 lg:mt-0 lg:w-[22rem]">
-                <p className="eyebrow mb-5 text-accent">Lundi 9 novembre</p>
+                <p className="eyebrow mb-5 text-accent">Infos pratiques</p>
                 <EventDetails compact />
               </div>
             </div>
@@ -249,7 +249,7 @@ function PortesOuvertes() {
               expérimenter, recevoir de la rétroaction constructive et apprendre les uns des autres.
             </SectionHeading>
 
-            <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-12 lg:grid-rows-[auto_auto]">
+            <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-12 lg:grid-rows-[24rem_28rem]">
               <Figure
                 src={discoursExplorer.url}
                 alt="Un membre prononce un discours au lutrin, à côté de la bannière du club"
@@ -260,19 +260,19 @@ function PortesOuvertes() {
                 src={concours2.url}
                 alt="Une participante reçoit un certificat de premier prix au concours d'expression orale"
                 caption="Des progrès qui se célèbrent."
-                className="col-span-2 aspect-[16/10] lg:col-span-7"
+                className="col-span-2 aspect-[16/10] lg:col-span-7 lg:aspect-auto"
               />
               <Figure
                 src={discoursInfluence.url}
                 alt="Une membre souriante prend la parole au lutrin, avec le mot du jour « Influence »"
                 caption="Oser prendre la parole, à son rythme."
-                className="aspect-[3/4] lg:col-span-3"
+                className="aspect-[3/4] lg:col-span-3 lg:aspect-auto"
               />
               <Figure
                 src={reconnaissance.url}
                 alt="Deux membres se serrent la main lors de la remise d'un certificat de reconnaissance"
                 caption="Un esprit d'entraide pour avancer ensemble."
-                className="aspect-[3/4] lg:col-span-4"
+                className="aspect-[3/4] lg:col-span-4 lg:aspect-auto"
               />
             </div>
           </div>
