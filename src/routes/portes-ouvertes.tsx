@@ -312,7 +312,7 @@ function PortesOuvertes() {
             src={selfie.url}
             alt="Deux membres du club sourient devant la bannière Toastmasters"
             loading="lazy"
-            className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center]"
+            className="absolute inset-0 -z-20 h-full w-full -scale-x-100 object-cover object-[30%_center]"
           />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-tm-burgundy/40" aria-hidden />
           <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
