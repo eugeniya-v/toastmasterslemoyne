@@ -14,12 +14,15 @@ import {
 } from "lucide-react";
 
 import groupe from "@/assets/club/groupe.jpg.asset.json";
-import discoursGestes from "@/assets/club/discours-gestes.jpg.asset.json";
+import president from "@/assets/club/president.jpg.asset.json";
+import logo from "@/assets/club/toastmasters-logo.svg.asset.json";
+import rencontre from "@/assets/club/rencontre.jpg.asset.json";
+import remiseCertificat from "@/assets/club/remise-certificat.jpg.asset.json";
+import presentation from "@/assets/club/presentation.jpg.asset.json";
+import membresEvenement from "@/assets/club/membres-evenement.jpg.asset.json";
 import discoursExplorer from "@/assets/club/discours-explorer.jpg.asset.json";
 import discoursInfluence from "@/assets/club/discours-influence.jpg.asset.json";
-import reconnaissance from "@/assets/club/reconnaissance.jpg.asset.json";
 import concours2 from "@/assets/club/concours-2.jpg.asset.json";
-import selfie from "@/assets/club/selfie-membres.jpg.asset.json";
 
 const FB_EVENT = "https://www.facebook.com/share/1DreDgYzMS/";
 const MAPS =
@@ -156,10 +159,13 @@ function PortesOuvertes() {
       {/* Top bar */}
       <header className="absolute inset-x-0 top-0 z-30">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
+          <div className="flex items-center gap-3">
+            <img src={logo.url} alt="Toastmasters International" className="h-14 w-16 rounded bg-paper p-1 object-contain sm:h-16 sm:w-20" />
           <p className="font-display text-sm font-bold leading-tight sm:text-base">
             Toastmasters
             <span className="block font-sans text-xs font-medium text-muted-foreground">Lemoyne de Candiac</span>
           </p>
+          </div>
           <a
             href={FB_EVENT}
             {...ext}
@@ -192,16 +198,15 @@ function PortesOuvertes() {
             </div>
 
             <div className="relative lg:col-span-5">
-              <div className="relative ml-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-card lg:max-w-none">
+              <div className="relative ml-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-2xl shadow-card lg:max-w-none">
                 <img
-                  src={discoursGestes.url}
-                  alt="Une membre du club prononce un discours devant la bannière Toastmasters Lemoyne"
-                  className="h-full w-full object-cover object-[center_30%]"
+                  src={president.url}
+                  alt="Le président du Club Toastmasters Lemoyne de Candiac prend la parole"
+                  className="h-full w-full object-cover"
                   fetchPriority="high"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" aria-hidden />
               </div>
-              <div className="glass relative -mt-28 mr-auto w-[92%] rounded-2xl p-6 shadow-card sm:p-7 lg:absolute lg:-left-16 lg:bottom-8 lg:mt-0 lg:w-[22rem]">
+              <div className="mt-6 border-t border-border pt-6">
                 <p className="eyebrow mb-5 text-accent">Infos pratiques</p>
                 <EventDetails compact />
               </div>
@@ -269,11 +274,15 @@ function PortesOuvertes() {
                 className="aspect-[3/4] lg:col-span-3 lg:aspect-auto"
               />
               <Figure
-                src={reconnaissance.url}
-                alt="Deux membres se serrent la main lors de la remise d'un certificat de reconnaissance"
+                src={remiseCertificat.url}
+                alt="Deux membres du club lors de la remise d'un certificat"
                 caption="Un esprit d'entraide pour avancer ensemble."
                 className="aspect-[3/4] lg:col-span-4 lg:aspect-auto"
               />
+            </div>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              <Figure src={presentation.url} alt="Un membre présente son discours devant un écran" caption="Partager ses idées avec clarté." className="aspect-[4/3]" />
+              <Figure src={membresEvenement.url} alt="Cinq membres réunis lors d'un événement" caption="Se retrouver et progresser ensemble." className="aspect-[4/3] [&_img]:object-top" />
             </div>
           </div>
         </section>
@@ -307,16 +316,9 @@ function PortesOuvertes() {
         </section>
 
         {/* BEGINNERS */}
-        <section className="relative isolate overflow-hidden" aria-labelledby="beg-title">
-          <img
-            src={selfie.url}
-            alt="Deux membres du club sourient devant la bannière Toastmasters"
-            loading="lazy"
-            className="absolute inset-0 -z-20 h-full w-full -scale-x-100 object-cover object-[30%_center]"
-          />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-tm-burgundy/40" aria-hidden />
-          <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-            <div className="glass max-w-2xl rounded-2xl p-8 sm:p-12">
+        <section className="bg-navy" aria-labelledby="beg-title">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:gap-14">
+            <div>
               <p className="eyebrow text-accent">Débutants bienvenus</p>
               <h2 id="beg-title" className="mt-5 text-4xl font-extrabold leading-[1.02] sm:text-5xl">
                 Vous n'avez pas besoin d'être déjà un bon orateur.
@@ -341,6 +343,12 @@ function PortesOuvertes() {
                 ))}
               </ul>
             </div>
+            <img
+              src={rencontre.url}
+              alt="Les membres du club réunis autour des tables pendant une rencontre Toastmasters"
+              loading="lazy"
+              className="aspect-[16/9] w-full rounded-lg object-cover shadow-card"
+            />
           </div>
         </section>
 
@@ -397,13 +405,7 @@ function PortesOuvertes() {
       <footer className="bg-navy-deep py-14 pb-28 sm:pb-14">
         <div className="mx-auto flex max-w-7xl flex-col gap-10 px-5 sm:px-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-5">
-            {/* Remplacer par le logo officiel Toastmasters fourni */}
-            <div
-              className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-dashed border-foreground/30 p-2 text-center text-[0.6rem] font-semibold uppercase leading-tight text-muted-foreground"
-              aria-label="Emplacement du logo officiel Toastmasters"
-            >
-              Logo officiel
-            </div>
+            <img src={logo.url} alt="Logo officiel Toastmasters International" className="h-24 w-28 shrink-0 rounded bg-paper p-2 object-contain" loading="lazy" />
             <div>
               <p className="font-display text-lg font-bold">Club Toastmasters Lemoyne de Candiac</p>
               <a href={`mailto:${EMAIL}`} className="mt-1 inline-flex items-center gap-2 text-muted-foreground hover:text-accent">
