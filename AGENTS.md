@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Uploaded club media is referenced through Lovable Assets JSON pointers; the favicon is a local SVG so browsers can load it directly.
+- Both entry routes use the same dedicated 1200×630 social preview asset with absolute public URLs, so shared links show the event artwork consistently.
