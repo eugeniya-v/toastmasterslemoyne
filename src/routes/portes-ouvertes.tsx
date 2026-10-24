@@ -23,6 +23,7 @@ import membresEvenement from "@/assets/club/membres-evenement.jpg.asset.json";
 import discoursExplorer from "@/assets/club/discours-explorer.jpg.asset.json";
 import discoursInfluence from "@/assets/club/discours-influence.jpg.asset.json";
 import concours2 from "@/assets/club/concours-2.jpg.asset.json";
+import socialPreview from "@/assets/club/portes-ouvertes-social.jpg.asset.json";
 
 const FB_EVENT = "https://www.facebook.com/share/1DreDgYzMS/";
 const MAPS =
@@ -45,6 +46,11 @@ export const Route = createFileRoute("/portes-ouvertes")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: `https://toastmasterslemoyne.lovable.app${socialPreview.url}` },
+      { name: "twitter:image", content: `https://toastmasterslemoyne.lovable.app${socialPreview.url}` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Portes ouvertes du Club Toastmasters Lemoyne de Candiac, le 9 novembre 2026, avec le président du club." },
     ],
     scripts: [
       {
