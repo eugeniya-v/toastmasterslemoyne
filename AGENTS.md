@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Uploaded club media is referenced through Lovable Assets JSON pointers; the favicon is a local SVG so browsers can load it directly.
